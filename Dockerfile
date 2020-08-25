@@ -2,7 +2,6 @@ FROM python:3.7
 
 ENV PYTHONUNBUFFERED 1
 
-# create root directory for our project in the container
 RUN mkdir /library
 
 # Set the working directory to /library
