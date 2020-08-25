@@ -16,6 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
+from bravo_library.views import (ClientViewSet, AuthorViewSet, BookViewSet,
+                                 BookInstanceViewSet, GenreViewSet)
+
+router = routers.DefaultRouter()
+router.register(r"client", ClientViewSet)
+router.register(r"author", AuthorViewSet)
+router.register(r"book", BookViewSet)
+router.register(r"books", BookInstanceViewSet)
+router.register(r"genre", GenreViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
