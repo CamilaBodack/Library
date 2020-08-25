@@ -7,7 +7,8 @@ class Client(models.Model):
     username = models.CharField("Name", max_length=50)
     email = models.EmailField("Email")
     phone = models.CharField("Phone Number", default=0,  max_length=50)
-    password = models.CharField("Password", max_length=50, validators=[MinLengthValidator])
+    password = models.CharField("Password", max_length=50,
+                                validators=[MinLengthValidator])
 
     def __str__(self):
         return self.username
