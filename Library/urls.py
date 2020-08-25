@@ -14,19 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from rest_framework import routers
-from bravo_library.views import (ClientViewSet, AuthorViewSet, BookViewSet,
-                                 BookInstanceViewSet, GenreViewSet)
+from bravo_library.views import (ClientViewSet, BookViewSet)
 
 router = routers.DefaultRouter()
 router.register(r"client", ClientViewSet)
-router.register(r"author", AuthorViewSet)
-router.register(r"book", BookViewSet)
-router.register(r"books", BookInstanceViewSet)
-router.register(r"genre", GenreViewSet)
-
+router.register(r"books", BookViewSet)
 
 urlpatterns = [
+    path("", include(router.urls)),
     path('admin/', admin.site.urls),
 ]

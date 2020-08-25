@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     # third party apps
     'rest_framework',
     'django_filters',
-    'rest_framework_simplejwt',
     # my_apps
     'bravo_library'
 ]
@@ -109,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'pt-BR'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'America/Sao_Paulo'
 

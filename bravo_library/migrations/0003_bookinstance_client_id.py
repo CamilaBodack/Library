@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='bookinstance',
             name='client_id',
-            field=models.ForeignKey(default=0, on_delete=django.db.models.deletion.PROTECT, to='bravo_library.client'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='bravo_library.client'),
         ),
     ]
