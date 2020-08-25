@@ -22,17 +22,17 @@ class Book(models.Model):
     date_movement = models.DateTimeField("Date", auto_now=True)
     client_id = models.ForeignKey(Client, on_delete=models.SET_NULL,
                                   null=True)
+    reserve = models.BooleanField("is reserved", default=False)
     STATUS = (
-        ('D', 'Disponível'),
-        ('E', 'Emprestado'),
-        ('R', 'Reservado')
+        ('disponivel', 'Disponível'),
+        ('emprestado', 'Emprestado'),
     )
     status = models.CharField(
-        max_length=1,
+        max_length=30,
         choices=STATUS,
         blank=True,
-        default='D',
+        default='disponivel',
     )
 
     def __str__(self):
-        return self.title, self.status
+        return self.id, self.title, self.status

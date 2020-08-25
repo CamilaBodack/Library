@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
+from bravo_library import views
 from bravo_library.views import (ClientViewSet, BookViewSet)
 
 router = routers.DefaultRouter()
@@ -25,4 +26,5 @@ router.register(r"books", BookViewSet)
 urlpatterns = [
     path("", include(router.urls)),
     path('admin/', admin.site.urls),
+    path('books/<int:pk>/reserve/', views.BookViewSet.reserve, name="reserve")
 ]
