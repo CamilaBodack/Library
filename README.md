@@ -17,7 +17,7 @@ docker-compose up
 - Login with created user
 
 - Without docker:
-** better run this project inside virtualenv **
+- **better run this project inside virtualenv**
 - Install requirements.txt
 - In root of project run:
 
