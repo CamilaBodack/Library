@@ -56,6 +56,7 @@ Books:
 ## Docs:
 
 To see all endpoints and test:
+(Must login in API first)
 
 - Swagger: http://127.0.0.1:8000/doc
 - Redoc: http://127.0.0.1:8000/redoc
