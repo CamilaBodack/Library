@@ -5,7 +5,6 @@ from bravo_library.models import Client, Book
 class ClientModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
-        # Set up non-modified objects used by all test methods
         Client.objects.create(username='Gomes Oliver', email='gomes@gomes.com',
                               phone='48-90102-0304', password='12345678')
 
@@ -48,7 +47,6 @@ class ClientModelTest(TestCase):
 class BookModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
-        # Set up non-modified objects used by all test methods
         client = Client.objects.create(username='Gomes Oliver', email='gomes@gomes.com',
                                        phone='48-90102-0304', password='12345678')
         client.save()

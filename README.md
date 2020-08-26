@@ -21,7 +21,8 @@ docker-compose up
 - Login with created user
 
 - Without docker:
-- **better run this project inside virtualenv**
+
+**better run this project inside virtualenv**
 - Install requirements.txt
 - In root of project run:
 
@@ -40,3 +41,10 @@ python manage.py runserver
 ## Docs:
 - Swagger: http://127.0.0.1:8000/doc
 - Redoc: http://127.0.0.1:8000/redoc
+
+## Tests
+
+In root DIR, open console and run:
+```
+python manage.py test
+```
