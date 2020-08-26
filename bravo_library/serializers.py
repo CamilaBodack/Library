@@ -11,5 +11,4 @@ class ClientSerializer(serializers.ModelSerializer):
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
-        fields = ("id", "client_id", "title", "author", "summary", "genre", "isbn",
-                  "date_movement", "reserve", "status")
+        fields = ("id", "client_id", "title", "author", "summary", "genre", "isbn", "date_movement", "delivery_date", "reserve", "status")
