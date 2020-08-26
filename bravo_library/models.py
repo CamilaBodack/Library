@@ -19,7 +19,7 @@ class Book(models.Model):
     summary = models.TextField("Book summary", default=0,  max_length=1000)
     genre = models.CharField("Genre", default=0, max_length=50)
     isbn = models.CharField('ISBN', default=0, max_length=13)
-    date_movement = models.DateField("Date", auto_now=True)
+    date_movement = models.DateField("Withdrawal date", auto_now=True)
     delivery_date = models.DateField("Delivery Date", auto_now=False)
     client_id = models.ForeignKey(Client, on_delete=models.SET_NULL,
                                   null=True)
