@@ -1,5 +1,7 @@
 # Library
 
+Project modeled for bookstore implementation
+
 ## Running the project
 
 
