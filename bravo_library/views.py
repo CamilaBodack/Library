@@ -16,16 +16,15 @@ class ClientViewSet(viewsets.ModelViewSet):
         delivery_date = Book.objects.filter(client_id=pk).filter(status="emprestado")
 
         for item in delivery_date:
-            tax_default = 0
             day = (date.today() - item.delivery_date).days
             if(day < 1):
                 return Response({"title": item.title, "tax": 0})
             if(day >= 1 and day < 3):
-                return Response({"title": item.title, "Tax": (tax_default * 0.03) + (day * 0.002)})
+                return Response({"title": item.title, "Tax":  0.03 + (day * 0.002)})
             elif(day >= 3 and day < 5):
-                return Response({"title": item.title, "Tax": (tax_default * 0.05) + (day * 0.004)})
+                return Response({"title": item.title, "Tax":  0.05 + (day * 0.004)})
             else:
-                return Response({"title": item.title, "Tax": (tax_default * 0.07) + (day * 0.006)})
+                return Response({"title": item.title, "Tax":  0.07 + (day * 0.006)})
 
 
 class BookViewSet(viewsets.ModelViewSet):
