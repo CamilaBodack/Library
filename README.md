@@ -1,6 +1,12 @@
 # Library
 
-Project modeled for bookstore implementation
+Project modeled for bookstore implementation.
+
+## Implementation
+
+- Django 3.1
+- djangorestframework 3.11.1
+
 
 ## Running the project
 
@@ -36,9 +42,21 @@ python manage.py runserver
 - Available in http://127.0.0.1:8000/admin/
 - Login with created user
 
+## Main Endpoints
+
+Clients:
+- http://127.0.0.1:8000/client
+
+
+Books:
+- http://127.0.0.1:8000/books
+
 
 
 ## Docs:
+
+To see all endpoints and test:
+
 - Swagger: http://127.0.0.1:8000/doc
 - Redoc: http://127.0.0.1:8000/redoc
 
