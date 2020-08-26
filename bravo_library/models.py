@@ -10,7 +10,7 @@ class Client(models.Model):
                                 validators=[MinLengthValidator])
 
     def __str__(self):
-        return self.username
+        return self.id, self.username
 
 
 class Book(models.Model):

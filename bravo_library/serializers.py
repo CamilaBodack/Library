@@ -5,7 +5,7 @@ from .models import Client,  Book
 class ClientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Client
-        fields = ("username", "email", "phone")
+        fields = ("id", "username", "email", "phone")
 
 
 class BookSerializer(serializers.ModelSerializer):
