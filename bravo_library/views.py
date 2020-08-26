@@ -16,9 +16,8 @@ class ClientViewSet(viewsets.ModelViewSet):
         client_id = pk
         book = get_object_or_404(Book, pk=client_id)
         delivery_date = Book.objects.filter(client_id=book.pk).filter(status="emprestado")
-
+        books_list = []
         for item in delivery_date:
-            books_list = []
             day = (date.today() - item.delivery_date).days
             if(day < 1):
                 books_list.append({"title": item.title, "tax": 0})
