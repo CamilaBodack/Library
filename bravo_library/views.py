@@ -16,7 +16,7 @@ class ClientViewSet(viewsets.ModelViewSet):
         delivery_date = Book.objects.filter(client_id=pk).filter(status="emprestado")
 
         for item in delivery_date:
-            tax_default = 5
+            tax_default = 0
             day = (date.today() - item.delivery_date).days
             if(day < 1):
                 return Response({"title": item.title, "tax": 0})
