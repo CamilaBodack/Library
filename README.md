@@ -17,15 +17,17 @@ docker-compose up
 - Login with created user
 
 - Without docker:
-
-- Install requirements-dev.txt
+** better run this project inside virtualenv **
+- Install requirements.txt
 - In root of project run:
 
 ```
+python manage.py createsuperuser
 python manage.py runserver
 ```
 
-- Available in http://127.0.0.1:8000/
+- Available in http://127.0.0.1:8000/admin/
+- Login with created user
 
 
 
