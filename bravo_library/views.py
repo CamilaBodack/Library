@@ -13,7 +13,8 @@ class ClientViewSet(viewsets.ModelViewSet):
 
     @api_view(['GET'])
     def book_tax(request, pk):
-        book = get_object_or_404(Book, client_id=pk)
+        client_id = pk
+        book = get_object_or_404(Book, pk=client_id)
         delivery_date = Book.objects.filter(client_id=book.pk).filter(status="emprestado")
 
         for item in delivery_date:
