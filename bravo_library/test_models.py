@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Client, Book
+from bravo_library.models import Client, Book
 
 
 class ClientModelTest(TestCase):
@@ -37,32 +37,33 @@ class BookModelTest(TestCase):
                             delivery_date='04-08-2020', client_id=client,
                             reserve=False, status="emprestado")
 
-    def test_title_length(self):
-        book = Book.objects.get(id=1)
-        max_length = book._meta.get_field('title').max_length
-        self.assertEquals(max_length, 200)
 
-    def test_author_length(self):
-        book = Book.objects.get(id=1)
-        max_length = book._meta.get_field('author').max_length
-        self.assertEquals(max_length, 100)
+        def test_title_length(self):
+            book = Book.objects.get(id=1)
+            max_length = book._meta.get_field('title').max_length
+            self.assertEquals(max_length, 200)
 
-    def test_summary_length(self):
-        book = Book.objects.get(id=1)
-        max_length = book._meta.get_field('summary').max_length
-        self.assertEquals(max_length, 1000)
+        def test_author_length(self):
+            book = Book.objects.get(id=1)
+            max_length = book._meta.get_field('author').max_length
+            self.assertEquals(max_length, 100)
 
-    def test_genre_length(self):
-        book = Book.objects.get(id=1)
-        max_length = book._meta.get_field('genre').max_length
-        self.assertEquals(max_length, 50)
+        def test_summary_length(self):
+            book = Book.objects.get(id=1)
+            max_length = book._meta.get_field('summary').max_length
+            self.assertEquals(max_length, 1000)
 
-    def test_isbn_length(self):
-        book = Book.objects.get(id=1)
-        max_length = book._meta.get_field('isbn').max_length
-        self.assertEquals(max_length, 13)
+        def test_genre_length(self):
+            book = Book.objects.get(id=1)
+            max_length = book._meta.get_field('genre').max_length
+            self.assertEquals(max_length, 50)
 
-    def test_status_length(self):
-        book = Book.objects.get(id=1)
-        max_length = book._meta.get_field('status').max_length
-        self.assertEquals(max_length, 30)
+        def test_isbn_length(self):
+            book = Book.objects.get(id=1)
+            max_length = book._meta.get_field('isbn').max_length
+            self.assertEquals(max_length, 13)
+
+        def test_status_length(self):
+            book = Book.objects.get(id=1)
+            max_length = book._meta.get_field('status').max_length
+            self.assertEquals(max_length, 30)
