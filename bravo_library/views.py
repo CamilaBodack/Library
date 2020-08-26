@@ -13,10 +13,11 @@ class ClientViewSet(viewsets.ModelViewSet):
 
     @api_view(['GET'])
     def book_tax(request, pk):
-        delivery_date = Book.objects.filter(client_id=pk).filter(status="emprestado")
-
+        client_id = pk
+        book = get_object_or_404(Book, pk=client_id)
+        delivery_date = Book.objects.filter(client_id=book.pk).filter(status="emprestado")
+        books_list = []
         for item in delivery_date:
-            books_list = []
             day = (date.today() - item.delivery_date).days
             if(day < 1):
                 books_list.append({"title": item.title, "tax": 0})
@@ -26,7 +27,7 @@ class ClientViewSet(viewsets.ModelViewSet):
                 books_list.append({"title": item.title, "tax":  0.05 + (day * 0.004)})
             else:
                 books_list.append({"title": item.title, "tax":  0.07 + (day * 0.006)})
-            return Response({"books": books_list})
+        return Response({"books": books_list})
 
 
 class BookViewSet(viewsets.ModelViewSet):
